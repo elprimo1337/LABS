@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 #include <random>
 
@@ -82,7 +82,7 @@ vector<vector<int>> createRandomMatrix(int n) {
 
     return matrix;
 }
-int goida() {//то, что нам нада
+int Goida() {//то, что нам нада
     int rows;
     cout << "Введите размерность матрицы: ";
     cin >> rows;
@@ -123,6 +123,6 @@ int goida() {//то, что нам нада
 
 int main() {
     setlocale(LC_ALL, "RU"); // RU локализация консоли
-    cout << goida();
+    cout << Goida();
     return 0;
 }
