@@ -1,0 +1,130 @@
+// drob.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+#include <stdexcept> // for std::runtime_error
+#include <iostream>
+using std::cin;
+using std::cout;
+using std::endl;
+#include <algorithm> // для std::abs
+
+long long gcd(long long a, long long b) {
+    if (b == 0) return a;
+    return gcd(b, a % b);
+}
+
+class Fraction{
+private:
+    long long num;
+    long long den;
+    void reduce() {
+        long long common = gcd(std::abs(num), std::abs(den));
+        num /= common;
+        den /= common;
+        // Обработка случая деления на ноль
+        if (den == 0) {
+            throw std::runtime_error("Деление на ноль");
+        }
+        if (den < 0) {
+            num *= -1;
+            den *= -1;
+        }
+    }
+public:
+    Fraction() { num = 0; den = 1; }
+    Fraction(long long num_, long long den_) {
+        num = num_;
+        den = den_;
+        if (den == 0) {
+            throw std::runtime_error("Деление на ноль");
+        }
+        reduce();
+    }
+    // Установка числителя
+    void setNumerator(long long sex) { num = sex; reduce(); }
+
+    // Получение числителя
+    long long getNumerator()  { return num; }
+
+    // Установка знаменателя
+    void setDenominator(long long sex) {
+        if (sex == 0) {
+            throw std::runtime_error("Деление на ноль");
+        }
+        den = sex;
+        reduce();
+    }
+
+    // Получение знаменателя
+    long long getDenominator() { return den; }
+    Fraction operator*(Fraction b) {
+        return Fraction(num * b.num, den * b.den);
+    }
+    Fraction operator/(Fraction b) {
+        return Fraction(num * b.den, den * b.num);
+    }
+    Fraction operator+(Fraction const& b) const {
+        long long num_ = num * b.den + den * b.num;
+        long long den_ = den * b.den;
+        return Fraction(num_, den_);
+    }
+    Fraction operator-(Fraction const& b) const {
+        return *this + Fraction(-1, 1) * b;//хайп свэг ниггерс
+    }
+    //goida
+    bool operator<(Fraction const& b) const {
+        return num * b.den < b.num * den;
+    }
+    bool operator>(Fraction const& b) const {
+        return !(*this < b);
+    }
+    bool operator==(Fraction const& b) const {
+        return num * b.den == b.num * den;
+    }
+    bool operator!=(Fraction const& b) const {
+        return !(*this == b);
+    }
+    //goida
+    friend std::istream& operator>>(std::istream& in, Fraction& f) {
+        in >> f.num >> f.den; f.reduce();
+        return in;
+    }
+    friend std::ostream& operator<<(std::ostream& out, Fraction const& f) {
+        out << f.num << "/" << f.den;
+        return out;
+    }
+    // Уникальный метод 1:  Нахождение обратной дроби
+    Fraction inverse() const {
+        if (num == 0) {
+            throw std::runtime_error("Обратная дробь от 0/1 не существует");
+        }
+        return Fraction(den, num);
+    }
+    // Уникальный метод 2:
+    bool isProper() const {
+        return std::abs(num) < std::abs(den);
+    }
+
+
+
+};
+int main()
+{
+    Fraction f1(1, 2);
+    Fraction f2(3, 4);
+    cout << "f1 = " << f1 << endl;
+    cout << "f2 = " << f2 << endl;
+    cout << "f1 + f2 = " << f1 + f2 << endl;
+    cout << "f1 - f2 = " << f1 - f2 << endl;
+    cout << "f1 * f2 = " << f1 * f2 << endl;
+    cout << "f1 / f2 = " << f1 / f2 << endl;
+    cout << "f1 > f2: " << (f1 > f2) << endl;
+    cout << "f1 < f2: " << (f1 < f2) << endl;
+    cout << "f1 == f2: " << (f1 == f2) << endl;
+    Fraction f3;
+    cout << "Введите дробь (числитель/знаменатель): ";
+    cin >> f3;
+    cout << "Введенная дробь: " << f3 << endl;
+
+    cout << "Обратная дробь к f1: " << f1.inverse() << endl;
+
+}
