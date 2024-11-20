@@ -1,0 +1,76 @@
+// ConsoleApplication61.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+#include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cin;
+using std::cout;
+using std::string;
+using std::max;
+
+void filltab(std::vector<int>& tab, const std::string& understring) {
+	// Используем std::vector вместо массива фиксированного размера.  Более гибко.
+	int k = understring.length(); // Длина подстроки (предполагается k >= 2)
+
+	// Заполняем таблицу для символов, предшествующих последнему символу подстроки.
+	for (int i = k - 2; i >= 0; --i) {  // Изменено: i >= 0, более привычный стиль цикла
+		if (tab[unsigned char((understring[i]))] == 0) { //Добавлен явный cast для unsigned char, избегая потенциальных проблем
+			tab[unsigned char((understring[i]))] = k - i - 1;
+		}
+	}
+
+	// Заполняем таблицу для последнего символа подстроки.
+	if (tab[(unsigned char(understring[k - 1]))] == 0) { //Добавлен явный cast для unsigned char, избегая потенциальных проблем
+		tab[unsigned char((understring[k - 1]))] = k;
+	}
+
+	// Заполняем оставшиеся ячейки таблицы значением k.  Можно оптимизировать.
+	for (int i = 0; i < 256; ++i) { //Изменено: ++i, более привычный стиль цикла
+		if (tab[i] == 0) {
+			tab[i] = k;
+		}
+	}
+}
+int search(const string& pattern, const string& text, const std::vector<int>& tab) {
+	int i = pattern.length() - 1;
+	int j = pattern.length() - 1;
+
+	while (i < text.length()) {
+		while (j >= 0 && text[i] == pattern[j]) {
+			j--;
+			i--;
+		}
+
+		if (j == -1) {
+			return i + 1; // Возвращаем индекс начала совпадения
+		}
+
+		int shift;
+		if (j == pattern.length() - 1) {
+			shift = tab[unsigned char((text[i]))]; // Обработка несовпадения с самого начала
+		}
+		else {
+			shift = tab[unsigned char((pattern[j]))];
+		}
+		i += max(1, shift); // Гарантируем сдвиг как минимум на 1 позицию
+		j = pattern.length() - 1;
+	}
+
+	return -1; // Совпадение не найдено
+}
+
+
+int main()
+{
+	setlocale(LC_ALL, "RU"); // RU локализация консоли
+	string pattern, text;
+	std::vector<int> tab(256, 0); // Инициализируем вектор нулями
+	cout << "Введите подстроку: ";
+	getline(cin, pattern); // Используем getline для корректного чтения строки с пробелами
+
+	cout << "Введите текст: ";
+	getline(cin, text);     // Используем getline для корректного чтения строки с пробелами
+	filltab(tab, pattern);
+	cout << search(pattern, text, tab);
+}
