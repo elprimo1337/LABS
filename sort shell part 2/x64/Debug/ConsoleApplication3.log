@@ -1,0 +1,6 @@
+﻿  ConsoleApplication3.cpp
+C:\Users\79116\Desktop\алгоитмы лабы\sort shell part 2\ConsoleApplication3.cpp(13,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\79116\Desktop\алгоитмы лабы\sort shell part 2\ConsoleApplication3.cpp(131,17): message : выполняется компиляция ссылки на экземпляр шаблон функции "void shellSort<int>(std::vector<int,std::allocator<int>> &,int)"
+C:\Users\79116\Desktop\алгоитмы лабы\sort shell part 2\ConsoleApplication3.cpp(34,23): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\79116\Desktop\алгоитмы лабы\sort shell part 2\ConsoleApplication3.cpp(50,34): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  ConsoleApplication3.vcxproj -> C:\Users\79116\Desktop\алгоитмы лабы\sort shell part 2\x64\Debug\ConsoleApplication3.exe
