@@ -1,0 +1,50 @@
+﻿  hoar sort.cpp
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(102,13): error C2664: "HANDLE FindFirstFileA(LPCSTR,LPWIN32_FIND_DATAA)": невозможно преобразовать аргумент 2 из "WIN32_FIND_DATA *" в "LPWIN32_FIND_DATAA"
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(102,51): message : Типы, на которые указывают указатели, не связаны; для преобразования требуется reinterpret_cast, приведение в стиле С или приведение в стиле функции в круглых скобках
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\fileapi.h(240,1): message : см. объявление "FindFirstFileA"
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(102,13): message : при попытке сопоставить список аргументов "(const _Elem *, WIN32_FIND_DATA *)"
+          with
+          [
+              _Elem=char
+          ]
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(114,30): error C2440: инициализация: невозможно преобразовать "WCHAR [260]" в "std::basic_string<char,std::char_traits<char>,std::allocator<char>>"
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(114,30): message : "std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string": ни одна перегруженная функция не может преобразовать все типы аргументов
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(2539,5): message : может быть "std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(const _Elem *const )"
+          with
+          [
+              _Elem=char
+          ]
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(114,30): message : "std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(const _Elem *const )": невозможно преобразовать аргумент 1 из "WCHAR [260]" в "const _Elem *const "
+          with
+          [
+              _Elem=char
+          ]
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(114,44): message : Типы, на которые указывают указатели, не связаны; для преобразования требуется reinterpret_cast, приведение в стиле С или приведение в стиле функции в круглых скобках
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(3072,5): message : или       "std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(std::initializer_list<_Elem>,const _Alloc &)"
+          with
+          [
+              _Elem=char,
+              _Alloc=std::allocator<char>
+          ]
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(114,30): message : "std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(std::initializer_list<_Elem>,const _Alloc &)": невозможно преобразовать аргумент 1 из "WCHAR [260]" в "std::initializer_list<_Elem>"
+          with
+          [
+              _Elem=char,
+              _Alloc=std::allocator<char>
+          ]
+          and
+          [
+              _Elem=char
+          ]
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(114,44): message : Для преобразования требуется второй оператор пользовательского преобразования или конструктор
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(2569,5): message : или       "std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(_Iter,_Iter,const _Alloc &)"
+          with
+          [
+              _Alloc=std::allocator<char>
+          ]
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(114,30): message : при попытке сопоставить список аргументов "(WCHAR [260])"
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(132,64): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(142,14): error C2664: "BOOL FindNextFileA(HANDLE,LPWIN32_FIND_DATAA)": невозможно преобразовать аргумент 2 из "WIN32_FIND_DATA *" в "LPWIN32_FIND_DATAA"
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(142,35): message : Типы, на которые указывают указатели, не связаны; для преобразования требуется reinterpret_cast, приведение в стиле С или приведение в стиле функции в круглых скобках
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\fileapi.h(325,1): message : см. объявление "FindNextFileA"
+C:\Users\79116\Desktop\алгоитмы лабы\hoar sort\hoar sort.cpp(142,14): message : при попытке сопоставить список аргументов "(HANDLE, WIN32_FIND_DATA *)"
