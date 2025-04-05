@@ -31,7 +31,7 @@ void Fraction::reduce()
     }
 }
 void Fraction:: setNumerator(long long sex) { num = sex; reduce(); }
-long long Fraction:: getNumerator() { return num; }
+long long Fraction:: getNumerator()const { return num; }
 void Fraction:: setDenominator(long long sex) {
     if (sex == 0) {
         throw std::runtime_error("Деление на ноль");
@@ -39,11 +39,11 @@ void Fraction:: setDenominator(long long sex) {
     den = sex;
     reduce();
 }
-long long Fraction:: getDenominator() { return den; }
-Fraction Fraction:: operator*(Fraction b) {
+long long Fraction:: getDenominator() const { return den; }
+Fraction Fraction:: operator*(Fraction const&b)const {
     return Fraction(num * b.num, den * b.den);
 }
-Fraction Fraction:: operator/(Fraction b) {
+Fraction Fraction:: operator/(Fraction const&b)const {
     return Fraction(num * b.den, den * b.num);
 }
 Fraction Fraction:: operator+(Fraction const& b) const {

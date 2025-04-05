@@ -5,28 +5,28 @@
 class Fraction {
 public:
     Fraction();
-    Fraction(long long num_, long long den_);
+    Fraction(long long num, long long den);
     // Установка числителя
-    void setNumerator(long long sex);
+    void setNumerator(long long num);
 
     // Получение числителя
-    long long getNumerator();
+    long long getNumerator() const;
 
     // Установка знаменателя
-    void setDenominator(long long sex);
+    void setDenominator(long long den);
 
-    // Получение знаменателя
-    long long getDenominator();
-    Fraction operator*(Fraction b);
-    Fraction operator/(Fraction b);
+    // Получение знаменателя и операторы действий
+    long long getDenominator() const;
+    Fraction operator*(Fraction const& b) const;
+    Fraction operator/(Fraction const& b) const;
     Fraction operator+(Fraction const& b) const;
     Fraction operator-(Fraction const& b) const;
-    //goida
+    //операторты сравнения
     bool operator<(Fraction const& b) const;
     bool operator>(Fraction const& b) const;
     bool operator==(Fraction const& b) const;
     bool operator!=(Fraction const& b) const;
-    //goida
+    //фрэнды
     friend std::istream& operator>>(std::istream& in, Fraction& f);
     friend std::ostream& operator<<(std::ostream& out, Fraction const& f);
     // Уникальный метод 1:  Нахождение обратной дроби
