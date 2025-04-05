@@ -1,5 +1,0 @@
-﻿  alg part 2 dop balls.cpp
-C:\Users\79116\Desktop\алгоитмы лабы\alg part 2 dop balls\alg part 2 dop balls.cpp(21,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\79116\Desktop\алгоитмы лабы\alg part 2 dop balls\alg part 2 dop balls.cpp(32,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\79116\Desktop\алгоитмы лабы\alg part 2 dop balls\alg part 2 dop balls.cpp(33,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  alg part 2 dop balls.vcxproj -> C:\Users\79116\Desktop\алгоитмы лабы\alg part 2 dop balls\x64\Debug\alg part 2 dop balls.exe

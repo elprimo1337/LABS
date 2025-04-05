@@ -1,2 +1,0 @@
-C:\Users\79116\Desktop\алгоитмы лабы\ConsoleApplication3\x64\Debug\ConsoleApplication3.exe
-C:\Users\79116\Desktop\алгоитмы лабы\sort shell part 2\x64\Debug\ConsoleApplication3.exe

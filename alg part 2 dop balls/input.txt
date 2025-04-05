@@ -1,3 +1,0 @@
-tor
-std::move_iterator is an iterator adaptor which behaves exactly like the underlying iterator
-17 91

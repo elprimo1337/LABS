@@ -1,4 +1,0 @@
-﻿  against hoar sort.cpp
-C:\Users\79116\Desktop\алгоитмы лабы\against hoar sort\against hoar sort.cpp(14,47): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\79116\Desktop\алгоитмы лабы\against hoar sort\against hoar sort.cpp(64,40): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-  against hoar sort.vcxproj -> C:\Users\79116\Desktop\алгоитмы лабы\against hoar sort\x64\Debug\against hoar sort.exe

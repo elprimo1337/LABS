@@ -1,5 +1,0 @@
-﻿  alg 1 part2.cpp
-C:\Users\79116\Desktop\алгоитмы лабы\alg 1 part2\alg 1 part2.cpp(37,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\79116\Desktop\алгоитмы лабы\alg 1 part2\alg 1 part2.cpp(61,14): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\79116\Desktop\алгоитмы лабы\alg 1 part2\alg 1 part2.cpp(62,14): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  alg 1 part2.vcxproj -> C:\Users\79116\Desktop\алгоитмы лабы\alg 1 part2\x64\Debug\alg 1 part2.exe
